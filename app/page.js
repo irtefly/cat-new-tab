@@ -26,13 +26,12 @@ export default function Home() {
     if (envLinks) {
       try { setLinks(JSON.parse(envLinks)); } catch (e) { console.error("导航链接解析失败", e); }
     } else {
-      setLinks([{ name: '演示-淘宝', url: 'https://www.taobao.com' }]);
+      setLinks([]);
     }
 
     // 2. 读取搜索引擎
     const envEngines = process.env.NEXT_PUBLIC_SEARCH_ENGINES;
     let loadedEngines = [
-      { name: '百度', url: 'https://www.baidu.com/s?wd=' },
     ];
     if (envEngines) {
       try {
